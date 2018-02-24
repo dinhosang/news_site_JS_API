@@ -10,7 +10,7 @@
     <script src="helpers/jsonHelper.js"></script>
     <script src="helpers/headlineCountryCodes.js"></script>
     <script src="helpers/headlineCategories.js"></script>
-    <script src="models/countrySelectView.js"></script>
+    <script src="models/selectView.js"></script>
     <script src="models/newsHolder.js"></script>
     <script src="models/articleFlex.js"></script>
     <script src="keys/newsKey.js"></script>
@@ -24,6 +24,11 @@
     <select id="source-select">
       <option selected disabled>Search Sources</option>
     </select>
+
+    <label for="search-field">Search all articles: </label>
+    <input type="text" id="search-field" placeholder="search">
+    <button type="button" id="search-button">Search</button>
+
     <main id="articles-container">
 
     </main>

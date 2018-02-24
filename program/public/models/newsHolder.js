@@ -1,10 +1,11 @@
-const NewsHolder = function() {
+const NewsHolder = function(helper) {
   this.header = newsKey
   this.urlSources     = "https://newsapi.org/v2/sources?"
   this.urlEverything  = "https://newsapi.org/v2/everything?"
   this.urlHeadlines   = "https://newsapi.org/v2/top-headlines?"
   this.news = []
   this.onUpdate = null
+  this.helper = helper
 }
 
 NewsHolder.prototype.populateNewsCountryHead = function (helper, country) {
@@ -31,4 +32,13 @@ NewsHolder.prototype.populateNewsSourceHead = function(helper, source) {
 
 NewsHolder.prototype.getSources = function(helper, dropdown) {
   helper.makeRequest(this.urlSources, dropdown, this.header)
+}
+
+NewsHolder.prototype.searchAllBy = function() {
+  const searchField = document.getElementById('search-field')
+  const searchText = searchField.value
+  const arrayOfSplitText = searchText.trim().split(' ')
+  const urlEncodedSearchText = arrayOfSplitText.join('%20')
+  const url = `${this.urlEverything}q=${urlEncodedSearchText}`
+  this.helper.makeRequest(url, this, this.header)
 }
