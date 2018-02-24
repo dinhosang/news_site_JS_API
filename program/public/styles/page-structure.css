@@ -1,0 +1,35 @@
+body {
+  padding: 0.01vh 0.05vw;
+  background-color: rgba(124, 124, 124, 1)
+}
+
+body header {
+  padding: 0.05vh 0.05vw;
+  /* height: 15vh; */
+  width: 99%;
+  margin: 0vh 0.5vw;
+  position: fixed;
+  border-bottom: solid 0.5vh;
+}
+
+body main {
+  background-color: rgba(255, 255, 255, 0);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* align-content: space-around; */
+
+  width: 98%;
+  margin: auto;
+  margin-top: 10vh;
+  padding: 0.05vh 0.05vw;
+  overflow: scroll;
+}
+
+body footer {
+  height: 2%;
+  border-top: solid;
+  margin: 0vh 1vw;
+  background-color: rgb(255, 255, 255)
+}

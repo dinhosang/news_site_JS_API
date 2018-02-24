@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>News News News</title>
     <link rel="stylesheet" type="text/css" href="/styles/reset.css">
-    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/styles/page-structure.css">
+    <link rel="stylesheet" type="text/css" href="/styles/main-article-holder.css">
+    <link rel="stylesheet" type="text/css" href="/styles/body-header.css">
     <script src="main.js"></script>
     <script src="models/countriesHolder.js"></script>
     <script src="helpers/jsonHelper.js"></script>
@@ -16,21 +18,35 @@
     <script src="keys/newsKey.js"></script>
   </head>
   <body>
-    <p>Headlines By Country:</p>
-    <select id="country-select"></select>
-    <select id="category-select">
-      <option selected disabled>Search Categories</option>
-    </select>
-    <select id="source-select">
-      <option selected disabled>Search Sources</option>
-    </select>
-
-    <label for="search-field">Search all articles: </label>
-    <input type="text" id="search-field" placeholder="search">
-    <button type="button" id="search-button">Search</button>
-
+    <header>
+      <div id="banner">
+        <h1>Code Clan News</h1>
+        <button type="button" name="view-by-headline">Search Major Headlines</button>
+        <button type="button" name="view-by-all">Search All Articles</button>
+        <button type="button" id="login-request-button">Login</button>
+      </div>
+      <nav id="search-options">
+        <p>Headlines By Country:</p>
+        <select id="country-select"></select>
+        <select id="category-select">
+          <option selected disabled>Search Categories</option>
+        </select>
+        <select id="source-select">
+          <option selected disabled>Search Sources</option>
+        </select>
+        <label for="search-field">Search all articles: </label>
+        <input type="text" id="search-field" placeholder="search">
+        <button type="button" id="search-button">Search</button>
+      </nav>
+      <div id="currently-viewing">
+        <p>Currently Viewing: </p>
+      </div>
+    </header>
     <main id="articles-container">
 
     </main>
+    <footer>
+      <p>News API mention</p>
+    </footer>
   </body>
 </html>

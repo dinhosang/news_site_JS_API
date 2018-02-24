@@ -6,39 +6,39 @@ ArticleFlex.prototype.populateArticles = function(news) {
   this.flexBox.innerHTML = ''
   news.forEach(article => {
     const articleTemplate = document.createElement('article')
-    this.addTitleToTemplate(articleTemplate, article)
+    const link = document.createElement('a')
+    link.href = article.url
+
+    this.addTitleToLink(link, article, articleTemplate)
   })
 }
 
-ArticleFlex.prototype.addTitleToTemplate = function (template, article) {
+ArticleFlex.prototype.addTitleToLink = function (link, article, template) {
   const title     = document.createElement('p')
   title.innerText = article.title
   title.classList.add('article-title')
-  template.appendChild(title)
+  link.appendChild(title)
 
-  this.addUrlImageToTemplate(template, article)
+  this.addUrlImageToLink(link, article, template)
 }
 
-ArticleFlex.prototype.addUrlImageToTemplate = function (template, article) {
+ArticleFlex.prototype.addUrlImageToLink = function (link, article, template) {
   const img   = document.createElement('img')
-  const link  = document.createElement('a')
-
 
   img.src   = article.urlToImage
   img.alt   = 'link to article'
 
-  link.href = article.url
   link.appendChild(img)
-  template.appendChild(link)
 
-  this.addPublisherToTemplate(template, article)
+  this.addPublisherToLink(link, article, template)
 }
 
-ArticleFlex.prototype.addPublisherToTemplate = function (template, article) {
+ArticleFlex.prototype.addPublisherToLink = function (link, article, template) {
   const publisher     = document.createElement('p')
   publisher.innerText = article.source.name
   publisher.classList.add('publisher')
 
-  template.appendChild(publisher)
+  link.appendChild(publisher)
+  template.appendChild(link)
   this.flexBox.appendChild(template)
 }

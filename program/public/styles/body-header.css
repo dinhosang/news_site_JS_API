@@ -1,0 +1,44 @@
+body header nav {
+  display: none;
+}
+
+#banner {
+  display: flex;
+  height: 5vh;
+  background-color: rgba(110, 170, 250, 1);
+}
+
+#search-options {
+  height: 8vh;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#currently-viewing {
+  height: 2vh;
+  padding: 0.5vh 0.5vh;
+  background-color: rgba(230, 227, 227, 1);
+}
+
+#banner h1 {
+  width: 95%;
+  margin:auto;
+
+  font-size: 5vh;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.5vw;
+  text-shadow: 1px 1px rgb(0, 0, 0);
+  text-align: center;
+}
+
+#banner button {
+  height: 50%;
+  margin: auto 1vw;
+}
+
+#banner button[name="view-by-headline"] {
+  height: 80%;
+}
+
+#banner button[name="view-by-all"] {
+  height: 80%;
+}
