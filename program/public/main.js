@@ -1,13 +1,18 @@
 const main = function() {
-  const countryDropdown = new CountrySelectView('country-select')
-  const countries       = new CountriesHolder()
   const jsonHelper      = new JsonHelper()
 
-  countries.onUpdate = function(countries) {
-    countryDropdown.populateView(countries)
-  }
+  const countryDropdown = new CountrySelectView('country-select')
+  const countries       = new CountriesHolder()
 
+  const articlesContainer  = new ArticleFlex('articles-container')
+
+  const news              = new NewsHolder()
+
+
+  countries.setupUpdate(countryDropdown, news, articlesContainer)
   countries.populateCountries(jsonHelper)
+
+  news.setupUpdate(articlesContainer)
 
 }
 
