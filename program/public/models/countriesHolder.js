@@ -10,6 +10,6 @@ CountriesHolder.prototype.populateCountries = function(helper) {
 
 CountriesHolder.prototype.setupUpdate = function(dropdown, news, articleView) {
   this.onUpdate = function(countries) {
-    dropdown.populateView(countries, news, articleView)
+    dropdown.populateCountryView(countries, news, articleView)
   }
 };

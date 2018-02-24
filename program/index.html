@@ -9,6 +9,7 @@
     <script src="models/countriesHolder.js"></script>
     <script src="helpers/jsonHelper.js"></script>
     <script src="helpers/headlineCountryCodes.js"></script>
+    <script src="helpers/headlineCategories.js"></script>
     <script src="models/countrySelectView.js"></script>
     <script src="models/newsHolder.js"></script>
     <script src="models/articleFlex.js"></script>
@@ -17,6 +18,12 @@
   <body>
     <p>Headlines By Country:</p>
     <select id="country-select"></select>
+    <select id="category-select">
+      <option selected disabled>Search Categories</option>
+    </select>
+    <select id="source-select">
+      <option selected disabled>Search Sources</option>
+    </select>
     <main id="articles-container">
 
     </main>

@@ -6,7 +6,10 @@ JsonHelper.prototype.makeRequest = function(url, object, header) {
   const request = new XMLHttpRequest()
   request.open("GET", url)
   if(header !== undefined){
-    request.setRequestHeader("x-api-key", header)
+    request.setRequestHeader("X-Api-Key", header)
+  }
+  if(url.includes('bbc-news')){
+    url + `apiKey=${newsKey}`
   }
   request.addEventListener('load', this.convertJsonToJs.bind(request, object))
 

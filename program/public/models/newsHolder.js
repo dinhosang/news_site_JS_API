@@ -17,3 +17,18 @@ NewsHolder.prototype.setupUpdate = function(view) {
     view.populateArticles(result.articles)
   }
 }
+
+NewsHolder.prototype.populateNewsCategoryHead = function(helper, category) {
+  const url = `${this.urlHeadlines}category=${category}`
+  helper.makeRequest(url, this, this.header)
+}
+
+NewsHolder.prototype.populateNewsSourceHead = function(helper, source) {
+  const url = `${this.urlHeadlines}sources=${source}`
+  console.log(url);
+  helper.makeRequest(url, this, this.header)
+}
+
+NewsHolder.prototype.getSources = function(helper, dropdown) {
+  helper.makeRequest(this.urlSources, dropdown, this.header)
+}

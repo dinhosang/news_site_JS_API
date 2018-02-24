@@ -14,54 +14,47 @@ main {
   min-height: 83vh;
 }
 
+main article {
+  border: solid;
+  border-width: thin;
+  min-height: 35vh
+}
+
 @media screen and (max-width: 530px) {
   main article {
     max-width: 80%;
     min-width: 70%;
-    height: 35vh;
-    border: solid;
-    border-width: thin;
     margin: 0.5vh auto;
-    /* margin-bottom: 0.5vh; */
   }
 }
 
 @media screen and (min-width: 530.1px) {
   main article {
     width: 46vw;
-    height: 35vh;
-    border: solid;
-    border-width: thin;
     margin: 0.5vh 0.8vw 0.5vh 0.8vw;
-    /* margin-bottom: 0.5vh; */
   }
 }
 
 @media screen and (min-width: 720px) {
   main article {
     max-width: 30vw;
-    min-width: 20vw
-    height: 35vh;
-    border: solid;
-    border-width: thin;
+    min-width: 20vw;
     margin: 0.5vh 0.8vw 0.5vh 0.9vw;
-    /* margin-bottom: 0.5vh; */
   }
 }
 
 .article-title {
-  min-height: 20%;
-  max-height: 30%;
+  min-height: 30%;
 }
 
 main article img {
   width: 100%;
-  max-height: 70%;
-  min-height: 60%;
+  height: 60%;
+  /* max-height: 70%; */
 }
 
 .publisher {
-  height: 5%;
+  max-height: 0.5%;
   text-align: right;
   margin-right: 5%;
 }
