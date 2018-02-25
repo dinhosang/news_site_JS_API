@@ -3,6 +3,7 @@ body header #search-all-articles {
 }
 
 body header #search-headlines {
+  min-height: 75px;
   height: 12vh;
   display: none;
   background-color: rgba(255, 255, 255, 1);
@@ -12,23 +13,24 @@ body header #search-headlines-country-and-or-category {
   width: 60%;
   display: block;
   padding: 1vh 0.5vw;
-  font-size: 2vh;
+  font-size: 1em;
   border-right: ridge 0.25vw;
 }
 
 body header #search-headlines-country-and-or-category p {
   text-align: center;
-  margin-bottom: 1vh;
+  margin-bottom: 0.5em;
 }
 
 body header #search-country {
   font-size: inherit;
-  margin-bottom: 2vh;
+  margin-bottom: 0.5em;
 }
 
 body header #search-category-confirm-reset {
   display: flex;
   align-items: baseline;
+  margin-bottom: 0.5em;
 }
 
 body header #search-category-confirm-reset label {
@@ -36,7 +38,8 @@ body header #search-category-confirm-reset label {
 }
 
 body header #search-category-confirm-reset button {
-  height: 3vh;
+  min-height: 1.5em;
+  height: 2.5vh;
   font-size: inherit;
   margin-left: 3vw;
 }
@@ -51,14 +54,16 @@ body header #search-headlines-source select {
 
 #banner {
   display: flex;
-  height: 5vh;
+  min-height: 50px;
+  max-height: 5vh;
   background-color: rgba(110, 170, 250, 1);
 }
 
 #currently-viewing {
-  height: 2vh;
+  min-height: 10px;
+  max-height: 2vh;
   padding: 0.5vh 0.5vh;
-  font-size: 2vh;
+  font-size: 0.70em;
   background-color: rgba(230, 227, 227, 1);
 }
 
@@ -66,7 +71,7 @@ body header #search-headlines-source select {
   width: 95%;
   margin:auto;
 
-  font-size: 5vh;
+  font-size: 3em;
   color: rgb(255, 255, 255);
   letter-spacing: 0.5vw;
   text-shadow: 1px 1px rgb(0, 0, 0);
@@ -84,4 +89,38 @@ body header #search-headlines-source select {
 
 #banner button[id="view-by-all"] {
   height: 80%;
+}
+
+@media screen and (max-width: 765px) {
+
+  body header #search-headlines-country-and-or-category {
+    font-size: 2vw;
+  }
+
+  body header #search-headlines-country-and-or-category select {
+    width: 35vw;
+  }
+
+  body header #search-headlines-source {
+    font-size: 2vw;
+  }
+
+  select {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (max-width: 620px) {
+
+  #banner h1 {
+    font-size: 6vw;
+  }
+
+  #banner button {
+    font-size: 2vw;
+  }
+
+  #currently-viewing {
+    font-size: 1.7vw;
+  }
 }
