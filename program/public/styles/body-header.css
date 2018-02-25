@@ -1,5 +1,52 @@
-body header nav {
+body header #search-all-articles {
   display: none;
+}
+
+body header #search-headlines {
+  height: 12vh;
+  display: none;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+body header #search-headlines-country-and-or-category {
+  width: 60%;
+  display: block;
+  padding: 1vh 0.5vw;
+  font-size: 2vh;
+  border-right: ridge 0.25vw;
+}
+
+body header #search-headlines-country-and-or-category p {
+  text-align: center;
+  margin-bottom: 1vh;
+}
+
+body header #search-country {
+  font-size: inherit;
+  margin-bottom: 2vh;
+}
+
+body header #search-category-confirm-reset {
+  display: flex;
+  align-items: baseline;
+}
+
+body header #search-category-confirm-reset label {
+  margin-right: 1vw;
+}
+
+body header #search-category-confirm-reset button {
+  height: 3vh;
+  font-size: inherit;
+  margin-left: 3vw;
+}
+
+body header #search-headlines-source {
+  padding: 3vh 1.75vw;
+}
+
+body header #search-headlines-source select {
+  width: 35vw;
 }
 
 #banner {
@@ -8,14 +55,10 @@ body header nav {
   background-color: rgba(110, 170, 250, 1);
 }
 
-#search-options {
-  height: 8vh;
-  background-color: rgba(255, 255, 255, 1);
-}
-
 #currently-viewing {
   height: 2vh;
   padding: 0.5vh 0.5vh;
+  font-size: 2vh;
   background-color: rgba(230, 227, 227, 1);
 }
 
@@ -35,10 +78,10 @@ body header nav {
   margin: auto 1vw;
 }
 
-#banner button[name="view-by-headline"] {
+#banner button[id="view-by-headline"] {
   height: 80%;
 }
 
-#banner button[name="view-by-all"] {
+#banner button[id="view-by-all"] {
   height: 80%;
 }

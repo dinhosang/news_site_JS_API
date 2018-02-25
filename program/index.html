@@ -13,27 +13,46 @@
     <script src="helpers/headlineCountryCodes.js"></script>
     <script src="helpers/headlineCategories.js"></script>
     <script src="models/selectView.js"></script>
+    <script src="models/searchArea.js"></script>
     <script src="models/newsHolder.js"></script>
-    <script src="models/articleFlex.js"></script>
+    <script src="models/articleFlexBox.js"></script>
+    <script src="models/currentlyViewing.js"></script>
     <script src="keys/newsKey.js"></script>
   </head>
   <body>
     <header>
       <div id="banner">
         <h1>Code Clan News</h1>
-        <button type="button" name="view-by-headline">Search Major Headlines</button>
-        <button type="button" name="view-by-all">Search All Articles</button>
+        <button type="button" id="view-by-headline" value="headline">Search Major Headlines</button>
+        <button type="button" id="view-by-all" value="all">Search All Articles</button>
         <button type="button" id="login-request-button">Login</button>
       </div>
-      <nav id="search-options">
-        <p>Headlines By Country:</p>
-        <select id="country-select"></select>
-        <select id="category-select">
-          <option selected disabled>Search Categories</option>
-        </select>
-        <select id="source-select">
-          <option selected disabled>Search Sources</option>
-        </select>
+      <nav id="search-headlines">
+        <div id="search-headlines-country-and-or-category">
+          <p>Search Headlines By Country and/or Category:</p>
+          <div id="search-country">
+            <label for="country-select">Headlines By Country: </label>
+            <select id="country-select">
+              <option selected disabled value="default">Search Countries</option>
+            </select>
+          </div>
+          <div id="search-category-confirm-reset">
+            <label for="category-select">Headlines By Category: </label>
+            <select id="category-select">
+              <option class="default-select" selected disabled value="default">Search Categories</option>
+            </select>
+            <button type="button" id="confirm-head-search">Search</button>
+            <button type="button" id="reset-head-search">Reset</button>
+          </div>
+        </div>
+        <div id="search-headlines-source">
+          <p>Search Headlines By A Source:</p>
+          <select id="source-select">
+            <option selected disabled value="default">Search Sources</option>
+          </select>
+        </div>
+      </nav>
+      <nav id="search-all-articles">
         <label for="search-field">Search all articles: </label>
         <input type="text" id="search-field" placeholder="search">
         <button type="button" id="search-button">Search</button>

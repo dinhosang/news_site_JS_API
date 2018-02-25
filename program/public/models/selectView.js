@@ -1,18 +1,19 @@
-const SelectView = function(elementId) {
-  this.dropdown = document.getElementById(elementId)
+const SelectView = function(elementId, helper) {
   this.items    = []
-  this.jsonHelper = new JsonHelper()
-  this.onUpdate = null
+  this.dropdown = document.getElementById(elementId)
+  this.jsonHelper = helper
+  this.onUpdate   = null
+  this.updateCurrentlyViewing = null
 }
 
-SelectView.prototype.populateCountryView = function(countries, news, articleView) {
+SelectView.prototype.populateCountryView = function(countries, news) {
   this.items = countries
-  this.createAllCountryOptions(news, articleView)
+  this.createAllCountryOptions(news)
 }
 
-SelectView.prototype.populateCategoryView = function(categories, news, articleView) {
+SelectView.prototype.populateCategoryView = function(categories) {
   this.items = categories
-  this.createAllCategoryOptions(news, articleView)
+  this.createAllCategoryOptions()
 }
 
 SelectView.prototype.populateSourceView = function(result, news, articleView) {
@@ -27,26 +28,29 @@ SelectView.prototype.createAllSourceOptions = function(news, articleView) {
   })
 
   const informNewsOfChange = function() {
+
+    const infoHash = {
+      headline: true,
+      source: this.dropdown.selectedOptions[0].text
+    }
+
+    this.updateCurrentlyViewing(infoHash)
     news.populateNewsSourceHead(this.jsonHelper, this.dropdown.value)
+    this.informSearchArea()
   }.bind(this)
 
   this.dropdown.addEventListener('change', informNewsOfChange)
 }
 
-SelectView.prototype.createAllCategoryOptions = function(news, articleView) {
+SelectView.prototype.createAllCategoryOptions = function() {
   this.items.forEach(category => {
     const option = this.createOption(category.toUpperCase(), category)
     this.dropdown.appendChild(option)
   })
 
-  const informNewsOfChange = function() {
-    news.populateNewsCategoryHead(this.jsonHelper, this.dropdown.value)
-  }.bind(this)
-
-  this.dropdown.addEventListener('change', informNewsOfChange)
 }
 
-SelectView.prototype.createAllCountryOptions = function(news, articleView) {
+SelectView.prototype.createAllCountryOptions = function(news) {
   this.items.forEach(country => {
     if(searchableHeadlineCountryCodes.includes(country.alpha2Code.toLowerCase())){
       const option = this.createOption(country.name, country.alpha2Code.toLowerCase())
@@ -54,17 +58,13 @@ SelectView.prototype.createAllCountryOptions = function(news, articleView) {
     }
   })
 
-  const informNewsOfChange = function() {
-    news.populateNewsCountryHead(this.jsonHelper, this.dropdown.value)
-  }.bind(this)
-
-  this.dropdown.addEventListener('change', informNewsOfChange)
   news.populateNewsCountryHead(this.jsonHelper, this.dropdown.value)
 }
 
 SelectView.prototype.createOption = function(name, code) {
   const option      = document.createElement('option')
   option.innerText  = name
+
   if(code !== undefined) {
     option.value = code
   }
@@ -79,4 +79,17 @@ SelectView.prototype.setupUpdate = function (news, articleView) {
   this.onUpdate = function(sources) {
     this.populateSourceView(sources, news, articleView)
   }.bind(this)
+}
+
+SelectView.prototype.setupUpdateCurrentlyViewing = function(currentlyViewing) {
+  this.updateCurrentlyViewing = function(infoHash) {
+    currentlyViewing.update(infoHash)
+  }
+}
+
+SelectView.prototype.setupInformSearchArea = function(area) {
+
+  this.informSearchArea = function() {
+    area.resetHeadlineSearches()
+  }
 }

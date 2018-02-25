@@ -8,8 +8,8 @@ CountriesHolder.prototype.populateCountries = function(helper) {
   helper.makeRequest(this.url, this)
 }
 
-CountriesHolder.prototype.setupUpdate = function(dropdown, news, articleView) {
+CountriesHolder.prototype.setupUpdate = function(dropdown, news) {
   this.onUpdate = function(countries) {
-    dropdown.populateCountryView(countries, news, articleView)
+    dropdown.populateCountryView(countries, news)
   }
 };

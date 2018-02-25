@@ -1,31 +1,24 @@
 const main = function() {
+
   const jsonHelper = new JsonHelper()
 
-  const countryDropdown   = new SelectView('country-select')
-  const categoryDropdown  = new SelectView('category-select')
-  const sourceDropdown    = new SelectView('source-select')
 
-  const searchButton  = document.getElementById('search-button')
-  const countries     = new CountriesHolder()
+  const newsGetter = new NewsHolder(jsonHelper)
+  const articlesContainer = new ArticleFlexBox('articles-container')
 
 
-  const articlesContainer = new ArticleFlex('articles-container')
+  const searchElements = {
+    buttonByHeadline: 'view-by-headline',
+    headlineSearchSection: 'search-headlines', country: 'country-select',
+    category: 'category-select', source: 'source-select',
+    searchButton: 'confirm-head-search', resetButton: 'reset-head-search',
+    currentlyViewing: "currently-viewing"
+  }
+  const searchArea = new SearchArea(searchElements, newsGetter, articlesContainer, jsonHelper)
 
-  const news              = new NewsHolder(jsonHelper)
 
-
-  countries.setupUpdate(countryDropdown, news, articlesContainer)
-  countries.populateCountries(jsonHelper)
-
-  categoryDropdown.populateCategoryView(headlineCategories, news, articlesContainer)
-
-  sourceDropdown.setupUpdate(news, articlesContainer)
-
-  news.getSources(jsonHelper, sourceDropdown)
-  news.setupUpdate(articlesContainer)
-
-  searchButton.addEventListener('click', news.searchAllBy.bind(news))
-
+  newsGetter.getSources(jsonHelper, searchArea.headlineSource)
+  newsGetter.setupUpdate(articlesContainer)
 }
 
 document.addEventListener('DOMContentLoaded', main)
