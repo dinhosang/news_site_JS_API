@@ -23,9 +23,9 @@ const SearchArea = function(fields, newsGetter, articlesContainer, helper) {
   this.headlineSource.dropdown.addEventListener('change', this.searchMade.bind(this, {source: true}))
 
   this.prepareSearchByButtons()
+  this.prepareCurrentlyViewing()
   this.prepareSelectViews()
   this.prepareHeadlineButton()
-  this.prepareCurrentlyViewing()
 }
 
 SearchArea.prototype.prepareSearchByButtons = function () {
@@ -52,6 +52,7 @@ SearchArea.prototype.prepareHeadlineButton = function () {
 
 SearchArea.prototype.prepareCurrentlyViewing = function () {
 
+  this.headlineCountrySelect.setupUpdateCurrentlyViewing(this.currentlyViewing)
   this.headlineSource.setupUpdateCurrentlyViewing(this.currentlyViewing)
   this.news.setupUpdateCurrentlyViewing(this.currentlyViewing)
 }

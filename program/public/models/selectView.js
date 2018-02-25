@@ -58,6 +58,7 @@ SelectView.prototype.createAllCountryOptions = function(news) {
     }
   })
 
+  this.updateCurrentlyViewing({headline: true, country: this.dropdown.selectedOptions[0].text})
   news.populateNewsCountryHead(this.jsonHelper, this.dropdown.value)
 }
 
