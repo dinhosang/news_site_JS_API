@@ -1,8 +1,17 @@
 body main article {
   border: solid;
   border-width: thin;
-  min-height: 35vh;
-  background-color: rgb(255, 255, 255)
+  /* min-height: 35%; */
+  background-color: rgb(255, 255, 255);
+}
+
+body main article:hover, body main article:focus {
+  border-style: groove;
+  border-width: 0.15vh;
+  border-radius: 5%;
+  border-color: rgba(110, 170, 250, 1);
+
+  box-shadow: 0vh 0vw 1vh #fff
 }
 
 body main article a {
@@ -27,24 +36,23 @@ body main article a {
 
 @media screen and (min-width: 720px) {
   main article {
-    max-width: 30vw;
+    max-width: 380px;
     min-width: 20vw;
     margin: 0.5vh 0.8vw 0.5vh 0.9vw;
   }
 }
 
 .article-title {
-  min-height: 25%;
-  padding: 0.25vh 0.25vw;
+  height: 20%;
+  padding: 0.75vh 0.75vw;
 }
 
-main article img {
-  width: 100%;
+main article a img {
   height: 65%;
+  width: 100%;
 }
 
 .publisher {
-  max-height: 0.5%;
   text-align: right;
   margin-right: 5%;
 }

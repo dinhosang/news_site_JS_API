@@ -5,7 +5,6 @@ body {
 
 body header {
   padding: 0.05vh 0.05vw;
-  /* height: 15vh; */
   width: 99%;
   margin: 0vh 0.5vw;
   position: fixed;
@@ -17,7 +16,7 @@ body main {
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   /* align-content: space-around; */
 
   width: 98%;
@@ -28,7 +27,9 @@ body main {
 }
 
 body footer {
-  height: 2%;
+  height: 3%;
+  text-align: right;
+  padding: 0.25vh 0.25vw;
   border-top: solid;
   margin: 0vh 1vw;
   background-color: rgb(255, 255, 255)
