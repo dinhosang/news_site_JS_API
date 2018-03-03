@@ -13,7 +13,7 @@ body header #search-headlines-country-and-or-category {
   width: 60%;
   display: block;
   padding: 1vh 0.5vw;
-  font-size: 1em;
+  font-size: 1.5vh;
   border-right: ridge 0.25vw;
 }
 
