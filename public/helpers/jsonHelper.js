@@ -9,7 +9,8 @@ JsonHelper.prototype.makeRequest = function(url, object, header) {
     request.setRequestHeader("X-Api-Key", header)
   }
   if(url.includes('bbc-news')){
-    url + `apiKey=${newsKey}`
+    apiKey = process.env.newsKey || newsKey
+    url + `apiKey=${apiKey}`
   }
   request.addEventListener('load', this.convertJsonToJs.bind(request, object))
 
