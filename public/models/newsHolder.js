@@ -1,6 +1,5 @@
 const NewsHolder = function(helper) {
-  this.header = process.env.newsKey || newsKey
-  console.log(process.env);
+  this.header = "news"
   this.urlSources     = "https://newsapi.org/v2/sources?"
   this.urlEverything  = "https://newsapi.org/v2/everything?"
   this.urlHeadlines   = "https://newsapi.org/v2/top-headlines?"

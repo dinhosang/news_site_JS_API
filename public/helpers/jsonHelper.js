@@ -3,15 +3,10 @@ const JsonHelper = function() {
 }
 
 JsonHelper.prototype.makeRequest = function(url, object, header) {
-  const request = new XMLHttpRequest()
-  request.open("GET", url)
-  if(header !== undefined){
-    request.setRequestHeader("X-Api-Key", header)
-  }
-  if(url.includes('bbc-news')){
-    apiKey = process.env.newsKey || newsKey
-    url + `apiKey=${apiKey}`
-  }
+  const request   = new XMLHttpRequest()
+  const serverUrl = `http://localhost:3000/api/${header}?url=${url}`
+
+  request.open("GET", serverUrl)
   request.addEventListener('load', this.convertJsonToJs.bind(request, object))
 
   request.send()

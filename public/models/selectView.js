@@ -1,6 +1,6 @@
 const SelectView = function(elementId, helper) {
-  this.items    = []
-  this.dropdown = document.getElementById(elementId)
+  this.items      = []
+  this.dropdown   = document.getElementById(elementId)
   this.jsonHelper = helper
   this.onUpdate   = null
   this.updateCurrentlyViewing = null
@@ -47,7 +47,6 @@ SelectView.prototype.createAllCategoryOptions = function() {
     const option = this.createOption(category.toUpperCase(), category)
     this.dropdown.appendChild(option)
   })
-
 }
 
 SelectView.prototype.createAllCountryOptions = function(news) {

@@ -5,7 +5,7 @@ const CountriesHolder = function() {
 }
 
 CountriesHolder.prototype.populateCountries = function(helper) {
-  helper.makeRequest(this.url, this)
+  helper.makeRequest(this.url, this, "countries")
 }
 
 CountriesHolder.prototype.setupUpdate = function(dropdown, news) {
