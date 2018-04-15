@@ -7,7 +7,7 @@ let newsKey
 if(!process.env.newsKey){
   newsKey   = require('./serverSide/keys/newsKey')
 } else {
-  console.log(process.env.newsKey);
+  newsKey   = process.env.newsKey
 }
 
 const port  = process.env.PORT || 3000
@@ -21,6 +21,9 @@ app.get('/api/countries', (req, clientRes) => {
   const options = {
     url: url
   }
+
+  console.log(newsKey);
+  console.log('hi');
 
   const sendResponseToClient = (err, serverRes, body) => {
     if(err){
@@ -41,8 +44,8 @@ app.get('/api/countries', (req, clientRes) => {
 })
 
 app.get('/api/news', (req, clientRes) => {
-  let apiUrl = ""
-  const apiKey  = process.env.newsKey || newsKey
+  let apiUrl    = ""
+  const apiKey  = newsKey
   const queries = Object.keys(req.query)
   queries.forEach(query => {
 
