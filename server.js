@@ -14,15 +14,15 @@ if(!process.env.newsKey){
 
 const port  = process.env.PORT || 3000
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://fierce-woodland-96129.herokuapp.com")
-  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-  next()
-})
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "https://fierce-woodland-96129.herokuapp.com")
+//   // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+//   next()
+// })
 
-// app.use(cors({
-//   origin: 'https://fierce-woodland-96129.herokuapp.com'
-// }))
+app.use(cors({
+  origin: 'https://fierce-woodland-96129.herokuapp.com'
+}))
 
 // app.use(cors())
 
