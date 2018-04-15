@@ -6,6 +6,9 @@ const request = require('request')
 let newsKey
 if(!process.env.newsKey){
   newsKey   = require('./serverSide/keys/newsKey')
+} else {
+  console.log(process.env.newsKey);
+  console.log(process.env);
 }
 
 const port  = process.env.PORT || 3000
