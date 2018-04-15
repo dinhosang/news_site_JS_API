@@ -1,7 +1,9 @@
 const express = require('express')
 const app     = express()
 const path    = require('path')
+
 const request = require('request')
+const cors    = require('cors')
 
 let newsKey
 if(!process.env.newsKey){
@@ -12,11 +14,15 @@ if(!process.env.newsKey){
 
 const port  = process.env.PORT || 3000
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://fierce-woodland-96129.herokuapp.com/")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-  next()
-})
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "https://fierce-woodland-96129.herokuapp.com")
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+//   next()
+// })
+
+app.use(cors({
+  origin: 'https://fierce-woodland-96129.herokuapp.com'
+}))
 
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, '/public/html/index.html'))
