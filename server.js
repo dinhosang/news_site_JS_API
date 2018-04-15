@@ -14,16 +14,21 @@ if(!process.env.newsKey){
 
 const port  = process.env.PORT || 3000
 
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "https://fierce-woodland-96129.herokuapp.com")
-//   // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-//   next()
-// })
+// below uses standard js to implement cors
+// middle line is not currently required
+// next() is required or the page times out
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://fierce-woodland-96129.herokuapp.com")
+  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  next()
+})
 
-app.use(cors({
-  origin: 'https://fierce-woodland-96129.herokuapp.com'
-}))
+// // below uses cors module to allow access from only one chosen origin
+// app.use(cors({
+//   origin: 'https://fierce-woodland-96129.herokuapp.com'
+// }))
 
+// // below uses cors module to allow access from anywhere
 // app.use(cors())
 
 app.get('/', function(req, res){
