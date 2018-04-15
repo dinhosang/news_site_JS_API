@@ -20,9 +20,11 @@ const port  = process.env.PORT || 3000
 //   next()
 // })
 
-app.use(cors({
-  origin: 'https://fierce-woodland-96129.herokuapp.com'
-}))
+// app.use(cors({
+//   origin: 'https://fierce-woodland-96129.herokuapp.com'
+// }))
+
+app.use(cors())
 
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, '/public/html/index.html'))
