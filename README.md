@@ -29,3 +29,5 @@ Original site used XMLHttpRequests on the front-end, in attempting to place on h
 - All of the planning was made on paper, which lead to it being easier to lose track of and not have to show at the end when trying to build a full view of the project. Future planning should preferably be made using electronic resources, or immediately scanned for posterity.
 
 - More functionality had been dreamt of for the site in terms of actions available to the user, for example the sectioning of the screen into parts which are set to display specific types of articles which are tied to the account and the settings the user has chosen. All of this information would need to be stored in some manner of database as well. This wasn't possible in the time frame, and time period, but would be more than achievable now if I was to return to this project.
+
+- Having a default image for when the article source cannot provide one.
