@@ -1,7 +1,5 @@
 const JsonHelper = function() {
   this.url = document.URL
-  }
-
 }
 
 JsonHelper.prototype.makeRequest = function(url, object, header) {
