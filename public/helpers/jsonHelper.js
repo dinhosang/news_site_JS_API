@@ -1,9 +1,5 @@
 const JsonHelper = function() {
-  this.url = null
-  if(process.env.PORT){
-    this.url = "https://fierce-woodland-96129.herokuapp.com"
-  } else {
-    this.url = "http://localhost:3000"
+  this.url = document.URL
   }
 
 }
