@@ -4,7 +4,7 @@ const JsonHelper = function() {
 
 JsonHelper.prototype.makeRequest = function(url, object, header) {
   const request   = new XMLHttpRequest()
-  const serverUrl = `${this.url}/api/${header}?url=${url}`
+  const serverUrl = `${this.url}api/${header}?url=${url}`
 
   request.open("GET", serverUrl)
   request.addEventListener('load', this.convertJsonToJs.bind(request, object))
