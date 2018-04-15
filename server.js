@@ -3,8 +3,12 @@ const app     = express()
 const path    = require('path')
 const request = require('request')
 
-const newsKey   = require('./serverSide/keys/newsKey')
-const port = process.env.PORT || 3000
+let newsKey
+if(!process.env.newsKey){
+  newsKey   = require('./serverSide/keys/newsKey')
+}
+
+const port  = process.env.PORT || 3000
 
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, '/public/html/index.html'))
