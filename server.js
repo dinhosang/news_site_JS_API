@@ -12,6 +12,10 @@ if(!process.env.newsKey){
 
 const port  = process.env.PORT || 3000
 
+app.use(req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://fierce-woodland-96129.herokuapp.com/")
+}
+
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, '/public/html/index.html'))
 })
@@ -21,9 +25,6 @@ app.get('/api/countries', (req, clientRes) => {
   const options = {
     url: url
   }
-
-  console.log(newsKey);
-  console.log('hi');
 
   const sendResponseToClient = (err, serverRes, body) => {
     if(err){
